@@ -56,3 +56,14 @@ or
 ```
 yarn build
 ```
+
+## Author
+
+[Kirill Doroshev (DKMFzF)](https://vk.com/dkmfzf )
+
+## License
+
+This project is licensed under the MIT license
+
+Спасибо Яндекс Практикум!
+

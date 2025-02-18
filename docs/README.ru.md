@@ -55,11 +55,11 @@ npm run build
 yarn build
 ```
 
-## Author
+## Автор
 
-[Kirill Doroshev (DKMFzF)](https://vk.com/dkmfzf )
+[Кирилл Дорошев (DKMFzF)](https://vk.com/dkmfzf )
 
-## License
+## Лицензия
 
 This project is licensed under the MIT license
 
