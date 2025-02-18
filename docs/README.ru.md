@@ -61,6 +61,6 @@ yarn build
 
 ## Лицензия
 
-This project is licensed under the MIT license
+Этот проект лицензирован по лицензии MIT
 
 Спасибо Яндекс Практикум!
