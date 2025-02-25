@@ -59,7 +59,7 @@
 	font-size: 2vh;
 
 	.film__title {
-		font-size: 4em;
+		font-size: clamp(0.15625rem, -7.1484rem + 23.375vw, 6rem);;
 	}
 
 	.film__description {
