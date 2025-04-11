@@ -13,7 +13,7 @@
 
 ![screen_app](./docs/app-screen.png)
 
-[Если стало интерестно, то вот ещё один проект, который сделан по похожему принципу](https://github.com/DKMFzF/web-larek-MVC.git)  
+[Если стало интерестно, то вот ещё один мой проект, который сделан по похожему принципу](https://github.com/DKMFzF/web-larek-MVC.git)  
 
 ## Стек
 - HTML
