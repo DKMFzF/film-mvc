@@ -49,8 +49,6 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 
 	// рендер, вызывается когда надо обновить отображение с данными
 	render(data: Partial<T>): HTMLElement {
-		console.log(`View -> render(${data})`);
-		// console.log(data);
 		// Простая реализация рендера позволяющая, в том числе
 		// установить сеттеры для отдельных полей
 		// и вызывать их через поверхностное копирование.
@@ -91,7 +89,6 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 	}
 
 	protected ensureTemplate(query: string) {
-		// console.log('ХУЙ');
 		const el = this.ensure(query);
 		el.remove();
 		return el.cloneNode(true) as HTMLElement;

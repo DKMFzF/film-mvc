@@ -26,9 +26,7 @@ export class AppStateEmitter extends EventEmitter {
 	}
 
 	protected onModelChange(changed: AppStateChanges) {
-		console.log(`AppStateEmitter -> onModelChange(${changed}): OK`);
 		if (changed === AppStateChanges.modal) {
-			console.log('AppStateEmitter -> onModelChange(if change === AppStateChanges.modal): OK');
 
 			// первое событие с изменением модалки
 			this.emit(changed, {
@@ -39,7 +37,6 @@ export class AppStateEmitter extends EventEmitter {
 			// второе событие с открытием модалки
 			this.emit(this.model.openedModal, {});
 		} else {
-			console.log('AppStateEmitter -> onModelChange(else): OK');
 			this.emit(changed, {});
 		}
 		this.previousModal = this.model.openedModal;

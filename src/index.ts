@@ -38,8 +38,8 @@ const modal = {
 	[AppStateModals.success]: new SuccessScreen(new ModalController(app.model)),
 };
 
-// event
-//1 
+// Накидываем слушатели
+
 app.on(AppStateChanges.movies, () => {
 	main.items = Array.from(app.model.movies.values());
 });
@@ -106,7 +106,6 @@ app.on(AppStateModals.place, () => {
 app.on(AppStateChanges.basket, () => {
 	main.counter = app.model.basket.size;
 	
-	// вносим данные
 	modal[AppStateModals.place].render({
 		places: {
 			selected: Array.from(app.model.basket.values()),
@@ -114,7 +113,6 @@ app.on(AppStateChanges.basket, () => {
 		isDisabled: app.model.basket.size === 0,
 	});
 
-	// отображение
 	modal[AppStateModals.basket].tickets = Array.from(app.model.basket.values()).map((ticket) => {
 		return app.model.formatTicketDescription(ticket);
 	});

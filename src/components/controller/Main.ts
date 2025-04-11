@@ -3,7 +3,6 @@ import { Controller } from '@/components/base/Controller';
 
 export class MainController extends Controller<AppState> {
 	onOpenBasket = () => {
-		console.log('MainController -> onOpenBasket: OK');
 		this.model.openModal(AppStateModals.basket);
 	};
 

@@ -23,11 +23,8 @@ export class EventEmitter {
 	}
 
 	emit(eventName: string, data: object) {
-		console.log('EventEmitter -> emit: OK');
 		if (this.events.has(eventName)) {
-			console.log('EventEmitter -> emit(if this.events.has(eventName)): OK');
 			this.events.get(eventName).forEach((handler) => { // проходит по всем обработчикам
-				console.log(handler);
 				return handler(data); // срабатывает обработчик
 			});
 		}

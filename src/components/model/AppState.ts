@@ -224,9 +224,6 @@ export class AppStateModel implements AppState {
 
 	// UI methods
 	openModal(modal: AppStateModals): void {
-		console.log('AppState -> openModal: OK');
-		// console.log(this.openModal);
-		// console.log(this.openedModal); // none
 		switch (modal) {
 			case AppStateModals.session:
 				if (this.movieSessions.size === 0) {
@@ -319,7 +316,6 @@ export class AppStateModel implements AppState {
 	}
 
 	protected notifyChanged(changed: AppStateChanges): void {
-		console.log(`AppState -> openModal -> notifyChange(${changed}): OK`);
 		this.settings.onChange(changed);
 	}
 
