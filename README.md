@@ -1,53 +1,54 @@
 # Film!
 
-## Description
-This is a special project for me, in which I tried to implement architectural approaches from scratch, inspired by such well-known technologies as Redux, MobX, Vuex, Effector and EventEmitter from Node.js .  
+[The Docs is in English](./docs/README.en.md)
 
-The project uses its own implementation of the application state management model (AppStateModel+ AppStateEmitter), which allows you to subscribe to events and centrally update data. This is similar to Pub/Sub or Event Bus architecture.  
-Controllers work as intermediaries between the data model and the View, implementing the principles of MVC.  
+## Описание
+Это мой **особый** проект, где я **с нуля реализовал архитектурный подход**, вдохновляясь **Redux, MobX, Vuex, Effector и EventEmitter из Node.js**.
 
-All screens are view components that respond to state changes and events, similar to the components in Vue.js or React.  
-The feature of this implementation is complete independence from third—party libraries for state management or routing. Everything is built on my own EventEmitter and strict separation of responsibilities between the application layers.  
+**В основе — собственная система управления состоянием (AppStateModel + AppStateEmitter) с подпиской на события и централизованным обновлением данных, по принципу Pub/Sub.**
 
+Контроллеры связывают данные и представление в стиле MVC, а экраны — это компоненты, реагирующие на изменения состояния, как в **Vue.js** или **React**.
+
+**Главная особенность** — полная независимость от сторонних библиотек для состояния и маршрутизации. Всё построено на собственном EventEmitter и строгом разделении слоёв приложения.
 
 ![screen_app](./docs/app-screen.png)
 
-[Дока на русском](./docs/README.ru.md)
+[Если стало интерестно, то вот ещё один проект, который сделан по похожему принципу](https://github.com/DKMFzF/web-larek-MVC.git)  
 
-## Stack
-- HTML 
-- SCSS 
-- TS 
+## Стек
+- HTML
+- SCSS
+- TS
 - Webpack
 
-## Project structure:
-- ```src/``` — project source files
-- ```src/components/``` — folder with JS components
-- ```src/components/base/``` — folder with the base code
-- ```src/components/model/``` — folder with data models
-- ```src/components/controller/``` — folder with controller models
-- ```src/components/view``` — folder with display classes
-    - ```/common``` — folder with basic display classes
-    - ```/partial``` — folder with specific display classes
-    - ```/screen``` — folder with screen display classes
+## Структура проекта:
+- ```src/``` — исходные файлы проекта
+- ```src/components/``` — папка с JS-компонентами
+- ```src/components/base/``` — папка с базовым кодом
+- ```src/components/model/``` — папка с моделями данных
+- ```src/components/controller/``` — папка с моделями контроллеров
+- ```src/components/view``` — папка с классами отображения
+    - ```/common``` — папка с базовыми классами отображения
+    - ```/partial``` — папка с конкретными классами отображения
+    - ```/screen``` — папка с классами отображения экрана
 
-## Important files:
-- ```src/pages/index.html``` — HTML file of the main page
-- ```src/types/all-files.ts``` — file with types
-- ```src/index.ts``` — is the application's entry point
-- ```src/scss/styles.scss``` — the root file of styles
-- ```src/utils/constants.ts``` file with constants
-- ```src/utils/utils.ts``` file with utilities
+## Важные файлы:
+- ```src/pages/index.html``` — HTML-файл главной страницы
+- ```src/types/all-files.ts``` — файл с типами
+- ``src/index.ts`` — это точка входа в приложение
+- ``src/scss/styles.scss`` — корневой файл стилей
+- ``src/utils/constants.ts`` - файл с константами
+- ``src/utils/utils.ts` с утилитами
 
-## Installation and launch
-To install and run the project, run the following commands
+## Установка и запуск
+Для установки и запуска проекта выполните следующие команды
 
 ```
 npm install
 npm run start
 ```
 
-or
+или
 
 ```
 yarn
@@ -55,25 +56,24 @@ yarn start
 ```
 
 
-## Assembly
+## Сборка
 
 ```
 npm run build
 ```
 
-or
+или
 
 ```
 yarn build
 ```
 
-## Author
+## Автор
 
-[Kirill Doroshev (DKMFzF)](https://vk.com/dkmfzf )
+[Кирилл Дорошев (DKMFzF)](https://vk.com/dkmfzf )
 
-## License
+## Лицензия
 
-This project is licensed under the MIT license
+Этот проект лицензирован по лицензии MIT
 
 Спасибо Яндекс Практикум!
-
