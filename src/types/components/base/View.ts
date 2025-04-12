@@ -13,21 +13,19 @@ export interface IViewConstructor<T, S> {
 	new (root: HTMLElement, settings: S): IView<T>;
 }
 
-// Чтобы события настраивались единообразно, пропишем их здесь
-
-// Настройки для кликабельного отображения (кнопки, карточки...)
+// Настройки для кликабельного отображения
 export type IClickableEvent<T> = { event: MouseEvent; item?: T };
 export interface IClickable<T> {
 	onClick: (args: IClickableEvent<T>) => void;
 }
 
-// Настройки для изменяемого отображения (формы, переключатели...)
+// Настройки для изменяемого отображения, такие как формы, переключатели
 export type IChangeableEvent<T> = { event: Event; value?: T };
 export interface IChangeable<T> {
 	onChange: (args: IChangeableEvent<T>) => void;
 }
 
-// Настройки для выбираемого отображения (списки, таблицы...)
+// Настройки для выбираемого отображения, такие как списки, таблицы
 export type ISelectableEvent<T> = { event: Event; value?: T };
 export interface ISelectable<T> {
 	onSelect: (args: ISelectableEvent<T>) => void;
