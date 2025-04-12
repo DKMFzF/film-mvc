@@ -46,7 +46,6 @@ export class BasketScreen extends ModalScreen<
 	}
 
 	set tickets(tickets: TicketData[]) {
-		console.log(`BasketScreen -> set tickets(${tickets})`); // срабатывает когда включается render
 		this.modal.content = { items: tickets, };
 		this.nextButton.disabled = !tickets.length;
 	}
