@@ -17,7 +17,7 @@ import { IView } from '@/types/components/base/View';
 export abstract class View<T, S extends object> implements IView<T, S> {
 	// чтобы при копировании создавать дочерний класс, не зная его имени
 	['constructor']!: new (root: HTMLElement, settings: S) => this;
-	// введем кеш чтобы не пересоздавать и не искать повторно элементы
+	// кеш чтобы не пересоздавать и не искать повторно элементы
 	protected cache: Record<string, HTMLElement> = {};
 
 	// конструктор с элементом и настройками,
@@ -43,27 +43,17 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 	}
 
 	// методы жизненного цикла
-	// начальная инициализация, здесь можно создать элементы, повесить слушатели и т.д.
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected init() {}
 
 	// рендер, вызывается когда надо обновить отображение с данными
 	render(data: Partial<T>): HTMLElement {
-		// Простая реализация рендера позволяющая, в том числе
-		// установить сеттеры для отдельных полей
-		// и вызывать их через поверхностное копирование.
 		if (typeof data === 'object') {
-			// это не безопасная конструкция в JS,
-			// но при правильной типизации в TS можем себе позволить
-			// главное это прописать тип данных для рендера в дочерних классах
 			Object.assign(this, data);
 		}
 		return this.element;
 	}
 
-	// ... другие методы которые помогут строить отображение
-
-	// Обернем метод проверки элемента из утилит в кеш, чтобы повторно не искать по DOM
 	protected ensure<T extends HTMLElement>(
 		query?: SelectorElement<T>,
 		root: HTMLElement = this.element
@@ -88,6 +78,8 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 		el.replaceWith(value);
 	}
 
+	// дальше идут полезные теги которые упрощают дизнь вьюшки
+	
 	protected ensureTemplate(query: string) {
 		const el = this.ensure(query);
 		el.remove();
@@ -124,7 +116,6 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 		else el.style.setProperty('display', 'none');
 	}
 
-	// метод для универсальной установки свойств тега
 	protected setValue<T extends HTMLElement>(
 		query: SelectorElement<T>,
 		value: ElementValue<T>
