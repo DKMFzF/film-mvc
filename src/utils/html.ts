@@ -6,11 +6,8 @@ import {
 	SelectorElement,
 } from '@/types/html';
 
-/**
- * Убеждается что элемент существует
- * @param selectorElement — может быть селектором, элементом или коллекцией элементов
- * @param context
- */
+// Хлперы для упрощения жизни компонентов
+
 export function ensureElement<T extends HTMLElement>(
 	selectorElement: SelectorElement<T>,
 	context?: HTMLElement
@@ -31,11 +28,6 @@ export function ensureElement<T extends HTMLElement>(
 	throw new Error('Unknown selector element');
 }
 
-/**
- * Убеждается что все элементы существуют
- * @param selectorElement
- * @param context
- */
 export function ensureAllElements<T extends HTMLElement>(
 	selectorElement: SelectorCollection<T>,
 	context: HTMLElement = document as unknown as HTMLElement
@@ -52,9 +44,6 @@ export function ensureAllElements<T extends HTMLElement>(
 	throw new Error(`Unknown selector element`);
 }
 
-/**
- * Клонирует элемент из тега template
- */
 export function cloneTemplate<T extends HTMLElement>(
 	query: string | HTMLTemplateElement
 ): T {
@@ -62,9 +51,7 @@ export function cloneTemplate<T extends HTMLElement>(
 	return template.content.firstElementChild.cloneNode(true) as T;
 }
 
-/**
- * Создает элемент и устанавливает ему свойства и дочерние элементы
- */
+
 export function createElement<T extends HTMLElement>(
 	tagName: keyof HTMLElementTagNameMap,
 	props?: ElementProps<T>,
@@ -80,16 +67,10 @@ export function createElement<T extends HTMLElement>(
 	return element;
 }
 
-/**
- * Устанавливает дочерние элементы
- */
 export function setElementChildren(root: HTMLElement, children: ElementChild) {
 	root.replaceChildren(...(Array.isArray(children) ? children : [children]));
 }
 
-/**
- * Устанавливает свойства элемента
- */
 export function setElementProps<T extends HTMLElement>(
 	element: HTMLElement,
 	props: ElementProps<T>
@@ -105,9 +86,6 @@ export function setElementProps<T extends HTMLElement>(
 	}
 }
 
-/**
- * Устанавливает data-атрибуты элемента
- */
 export function setElementData<T extends Record<string, unknown> | object>(
 	el: HTMLElement,
 	data: T
