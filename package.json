@@ -1,6 +1,6 @@
 {
-  "name": "film",
-  "version": "2.0.0",
+  "name": "film-mvc-event",
+  "version": "3.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -33,7 +33,7 @@
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
   },
-  "description": "Movies schedule and ticket booking",
+  "description": "Приложение для бронирования билетов на фильм",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
