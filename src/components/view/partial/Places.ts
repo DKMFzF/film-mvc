@@ -107,7 +107,7 @@ export class PlacesView extends View<PlacesData, PlacesSettings> {
 	}
 
 	render(data: PlacesData) {
-		// нам важен порядок установки, поэтому переопределяем метод
+		// в этой реализации компонента важен порядок установки поэтому переопределяем метод
 		if (data.hall) this.hall = data.hall;
 		if (data.taken) this.taken = data.taken;
 		if (data.selected && Object.keys(this._seats).length)
