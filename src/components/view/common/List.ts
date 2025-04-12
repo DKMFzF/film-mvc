@@ -40,21 +40,20 @@ export class ListView<T extends ItemData> extends View<ListData<T>, ListSettings
 	 * Обновляем отображение списка элементов
 	 */
 	set items(items: T[]) {
-		// console.log(items); тут стали [{}, {}, {}, {}]
 		this._elements = items.reduce<ElementsMap>((result, item) => {
 			// Копируем заранее настроенное отображение
 			const el = this.settings.item.copy();
-			// console.log(el);
+			
 			// console.log(this.settings.item.copy());
+			
 			// Добавляем класс элемента
 			el.element.classList.add(this.settings.itemClass);
+			
 			// Заполняем нужными данными и сохраняем в объекте
-			// console.log(el);
-			// console.log(item);
-			result[item.id] = el.render(item); // сюда передаётся item (как модель)
+			result[item.id] = el.render(item); // важно: сюда передаётся item (как модель)
 			return result;
 		}, {});
-		// console.log(this._elements); // тут уже готовый список элементов [{}, {}, {}, {}]
+		// console.log(this._elements); // тут уже готовый список элементов
 		this.setValue(this.element, Object.values(this._elements));
 	}
 }
