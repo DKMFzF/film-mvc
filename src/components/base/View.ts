@@ -78,7 +78,7 @@ export abstract class View<T, S extends object> implements IView<T, S> {
 		el.replaceWith(value);
 	}
 
-	// дальше идут полезные теги которые упрощают дизнь вьюшки
+	// дальше идут полезные методы которые упрощают дизнь вьюшки
 	
 	protected ensureTemplate(query: string) {
 		const el = this.ensure(query);
