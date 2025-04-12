@@ -82,7 +82,6 @@ export class ScheduleView extends View<ScheduleData, ScheduleSettings> {
 		return this.element;
 	}
 
-	// преобразуем входящие данные для удобства работы с ними внутри отображения
 	static group(data: ScheduleSession[]) {
 		return data.reduce<HallSessions>((a, c) => {
 			if (!a[c.day]) a[c.day] = {};
